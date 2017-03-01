@@ -49,6 +49,20 @@
             ]
           }
         }],  # OS=="linux"
+        ['OS=="freebsd"', {
+          "include_dirs": [
+            "/usr/local/include",
+          ],
+          "sources": [
+            "src/keyboard-layout-manager-linux.cc",
+          ],
+          "link_settings": {
+            "libraries": [
+              "-lX11", "-lxkbfile"
+            ]
+          },
+          "ldflags": [ "-L/usr/local/lib" ],
+        }],  # OS=="freebsd"
       ]
     }
   ]
